@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -fPIC -g  -shared -Wl,-soname,libmysqrt.so -o ../../lib/libmysqrt.so CMakeFiles/mysqrt.dir/mysqrt.cpp.o 

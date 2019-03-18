@@ -1,0 +1,3 @@
+Options: 
+
+Options:-DCMAKE_INSTALL_PREFIX=/home/yhl/CMAKE_Tutorial/install

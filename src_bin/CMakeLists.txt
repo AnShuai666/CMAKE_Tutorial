@@ -10,6 +10,9 @@ include_directories(../include)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
-add_executable(main main.cpp)
-
+add_executable(tutorial tutorial.cpp)
+target_link_libraries(tutorial ${EXTRA_LIBS})
+add_executable(main main.cpp )
 target_link_libraries(main hello)
+
+

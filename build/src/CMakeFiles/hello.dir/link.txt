@@ -1,1 +1,1 @@
-/usr/bin/c++  -fPIC -fPIC -g  -shared -Wl,-soname,libhello.so -o ../../lib/libhello.so CMakeFiles/hello.dir/hello.cpp.o 
+/usr/bin/c++ -fPIC -fPIC -g  -shared -Wl,-soname,libhello.so -o ../../lib/libhello.so CMakeFiles/hello.dir/hello.cpp.o 

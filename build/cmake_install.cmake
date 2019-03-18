@@ -1,8 +1,8 @@
-# Install script for directory: /home/yhl/CPP_STUDY/tmp
+# Install script for directory: /home/yhl/CMAKE_Tutorial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "/home/yhl/CMAKE_Tutorial/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,10 +32,15 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/yhl/CPP_STUDY/tmp/build/src/cmake_install.cmake")
-  include("/home/yhl/CPP_STUDY/tmp/build/src_bin/cmake_install.cmake")
+  include("/home/yhl/CMAKE_Tutorial/build/src/cmake_install.cmake")
+  include("/home/yhl/CMAKE_Tutorial/build/src_bin/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/yhl/CPP_STUDY/tmp/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yhl/CMAKE_Tutorial/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

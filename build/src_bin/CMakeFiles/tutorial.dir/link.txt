@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g  -rdynamic CMakeFiles/tutorial.dir/tutorial.cpp.o  -o ../../bin/tutorial -Wl,-rpath,/home/yhl/CMAKE_Tutorial/lib ../../lib/libmysqrt.so 

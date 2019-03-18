@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -10,9 +10,9 @@
 iostream
 -
 
-/home/yhl/CPP_STUDY/tmp/src/hello.cpp
+/home/yhl/CMAKE_Tutorial/src/hello.cpp
 hello.h
-/home/yhl/CPP_STUDY/tmp/src/hello.h
+/home/yhl/CMAKE_Tutorial/src/hello.h
 iostream
 -
 
