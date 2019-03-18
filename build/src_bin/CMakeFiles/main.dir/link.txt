@@ -1,1 +1,1 @@
-/usr/bin/c++  -fPIC -g  -rdynamic CMakeFiles/main.dir/main.cpp.o  -o ../../bin/main -Wl,-rpath,/home/yhl/CMAKE_Tutorial/lib ../../lib/libhello.so 
+/usr/bin/c++  -fPIC -g  -rdynamic CMakeFiles/main.dir/main.cpp.o  -o main -Wl,-rpath,/home/as/CMAKE_Tutorial/lib: ../../lib/libhello.so 

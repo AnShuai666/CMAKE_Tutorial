@@ -12,7 +12,7 @@
 math.h
 -
 
-/home/yhl/CMAKE_Tutorial/src_bin/tutorial.cpp
+/home/as/CMAKE_Tutorial/src_bin/tutorial.cpp
 stdio.h
 -
 stdlib.h
@@ -20,7 +20,7 @@ stdlib.h
 math.h
 -
 TutorialConfig.h
-/home/yhl/CMAKE_Tutorial/src_bin/TutorialConfig.h
+/home/as/CMAKE_Tutorial/src_bin/TutorialConfig.h
 mysqrt.h
-/home/yhl/CMAKE_Tutorial/src_bin/mysqrt.h
+/home/as/CMAKE_Tutorial/src_bin/mysqrt.h
 

@@ -1,4 +1,6 @@
-/home/yhl/CMAKE_Tutorial/install/lib/libhello.so
-/home/yhl/CMAKE_Tutorial/install/lib/libmysqrt.so
-/home/yhl/CMAKE_Tutorial/install/include/hello.h
-/home/yhl/CMAKE_Tutorial/install/include/mysqrt.h
+/home/as/CMAKE_Tutorial/install/lib/libhello.so
+/home/as/CMAKE_Tutorial/install/lib/libmysqrt.so
+/home/as/CMAKE_Tutorial/install/include/hello.h
+/home/as/CMAKE_Tutorial/install/include/mysqrt.h
+/home/as/CMAKE_Tutorial/install/bin/tutorial
+/home/as/CMAKE_Tutorial/install/bin/main

@@ -1,0 +1,115 @@
+Start testing: Mar 19 00:08 CST
+----------------------------------------------------------
+1/6 Testing: TutorialRun
+1/6 Test: TutorialRun
+Command: "/home/as/CMAKE_Tutorial/build/tutorial" "25"
+Directory: /home/as/CMAKE_Tutorial/build
+"TutorialRun" start time: Mar 19 00:08 CST
+Output:
+----------------------------------------------------------
+Using the std system math library
+ The square root of 25 is 5
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TutorialRun" end time: Mar 19 00:08 CST
+"TutorialRun" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: TutorialUsage
+2/6 Test: TutorialUsage
+Command: "/home/as/CMAKE_Tutorial/build/tutorial"
+Directory: /home/as/CMAKE_Tutorial/build
+"TutorialUsage" start time: Mar 19 00:08 CST
+Output:
+----------------------------------------------------------
+/home/as/CMAKE_Tutorial/build/tutorial Version 1.0
+Usage: /home/as/CMAKE_Tutorial/build/tutorial number 
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[Usage:.*number
+]
+"TutorialUsage" end time: Mar 19 00:08 CST
+"TutorialUsage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: tutorialComp25
+3/6 Test: tutorialComp25
+Command: "/home/as/CMAKE_Tutorial/build/tutorial" "25"
+Directory: /home/as/CMAKE_Tutorial/build
+"tutorialComp25" start time: Mar 19 00:08 CST
+Output:
+----------------------------------------------------------
+Using the std system math library
+ The square root of 25 is 5
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[25 is 5
+]
+"tutorialComp25" end time: Mar 19 00:08 CST
+"tutorialComp25" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: TutorialComp9
+4/6 Test: TutorialComp9
+Command: "/home/as/CMAKE_Tutorial/build/tutorial" "9"
+Directory: /home/as/CMAKE_Tutorial/build
+"TutorialComp9" start time: Mar 19 00:08 CST
+Output:
+----------------------------------------------------------
+Using the std system math library
+ The square root of 9 is 3
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[9 is 3
+]
+"TutorialComp9" end time: Mar 19 00:08 CST
+"TutorialComp9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: TutorialComp0
+5/6 Test: TutorialComp0
+Command: "/home/as/CMAKE_Tutorial/build/tutorial" "0"
+Directory: /home/as/CMAKE_Tutorial/build
+"TutorialComp0" start time: Mar 19 00:08 CST
+Output:
+----------------------------------------------------------
+Using the std system math library
+ The square root of 0 is 0
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[0 is 0
+]
+"TutorialComp0" end time: Mar 19 00:08 CST
+"TutorialComp0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: TutorialComp-25
+6/6 Test: TutorialComp-25
+Command: "/home/as/CMAKE_Tutorial/build/tutorial" "-25"
+Directory: /home/as/CMAKE_Tutorial/build
+"TutorialComp-25" start time: Mar 19 00:08 CST
+Output:
+----------------------------------------------------------
+Using the std system math library
+ The square root of -25 is -nan
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Fail Reason:
+Required regular expression not found.Regex=[-25 is 0
+]
+"TutorialComp-25" end time: Mar 19 00:08 CST
+"TutorialComp-25" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 19 00:08 CST

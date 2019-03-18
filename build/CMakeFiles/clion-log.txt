@@ -1,6 +1,6 @@
-/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/home/yhl/CMAKE_Tutorial/install -G "CodeBlocks - Unix Makefiles" /home/yhl/CMAKE_Tutorial
+/home/as/Documents/software/CLion-2018.3.4/clion-2018.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/home/as/CMAKE_Tutorial/install -G "CodeBlocks - Unix Makefiles" /home/as/CMAKE_Tutorial
 ON
 use the tutorial provided math library
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/yhl/CMAKE_Tutorial/build
+-- Build files have been written to: /home/as/CMAKE_Tutorial/build

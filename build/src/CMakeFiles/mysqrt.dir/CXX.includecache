@@ -6,3 +6,11 @@
 
 #IncludeRegexTransform: 
 
+../src/../include/mysqrt.h
+math.h
+-
+
+/home/as/CMAKE_Tutorial/src/mysqrt.cpp
+mysqrt.h
+/home/as/CMAKE_Tutorial/src/mysqrt.h
+
