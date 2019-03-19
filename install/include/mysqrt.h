@@ -8,5 +8,6 @@
 #include <math.h>
 
 double mysqrt(double in);
+double mysqrt_1(double x);
 
 #endif //HELLOWORLD_MYSQRT1_H

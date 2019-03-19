@@ -5,6 +5,14 @@ set(CMAKE_CXX_FLAGS "-fPIC")
 set(CMAKE_BUILD_TYPE "Debug")
 
 include_directories(../include)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+add_executable(MakeTable MakeTable.cpp)
+
+add_custom_command(
+		OUTPUT ${PROJECT_SOURCE_DIR}/include/Table.h
+		COMMAND ${PROJECT_SOURCE_DIR}/bin/MakeTable ${PROJECT_SOURCE_DIR}/include/Table.h
+		DEPENDS ${PROJECT_SOURCE_DIR}/bin/MakeTable
+)
 
 set(HEADERS_HELLO
 		../include/hello.h
@@ -21,6 +29,7 @@ set(HEADERS_MYMATH
 set(SOURCE_FILES_MYMATH
 		mysqrt.cpp
 		)
+
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 add_library(hello SHARED ${HEADERS_HELLO} ${SOURCE_FILES_HELLO})
