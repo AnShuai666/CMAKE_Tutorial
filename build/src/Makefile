@@ -56,51 +56,27 @@ CMAKE_BINARY_DIR = /home/yhl/CMAKE_Tutorial/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/yhl/CMAKE_Tutorial/build && /home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target package
+package/fast: package
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+.PHONY : package/fast
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/yhl/CMAKE_Tutorial/build && /home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cpack --config ./CPackSourceConfig.cmake /home/yhl/CMAKE_Tutorial/build/CPackSourceConfig.cmake
+.PHONY : package_source
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target package_source
+package_source/fast: package_source
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+.PHONY : package_source/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -123,6 +99,52 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -186,6 +208,48 @@ mysqrt/fast:
 	cd /home/yhl/CMAKE_Tutorial/build && $(MAKE) -f src/CMakeFiles/mysqrt.dir/build.make src/CMakeFiles/mysqrt.dir/build
 .PHONY : mysqrt/fast
 
+# Convenience name for target.
+src/CMakeFiles/MakeTable.dir/rule:
+	cd /home/yhl/CMAKE_Tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/MakeTable.dir/rule
+.PHONY : src/CMakeFiles/MakeTable.dir/rule
+
+# Convenience name for target.
+MakeTable: src/CMakeFiles/MakeTable.dir/rule
+
+.PHONY : MakeTable
+
+# fast build rule for target.
+MakeTable/fast:
+	cd /home/yhl/CMAKE_Tutorial/build && $(MAKE) -f src/CMakeFiles/MakeTable.dir/build.make src/CMakeFiles/MakeTable.dir/build
+.PHONY : MakeTable/fast
+
+MakeTable.o: MakeTable.cpp.o
+
+.PHONY : MakeTable.o
+
+# target to build an object file
+MakeTable.cpp.o:
+	cd /home/yhl/CMAKE_Tutorial/build && $(MAKE) -f src/CMakeFiles/MakeTable.dir/build.make src/CMakeFiles/MakeTable.dir/MakeTable.cpp.o
+.PHONY : MakeTable.cpp.o
+
+MakeTable.i: MakeTable.cpp.i
+
+.PHONY : MakeTable.i
+
+# target to preprocess a source file
+MakeTable.cpp.i:
+	cd /home/yhl/CMAKE_Tutorial/build && $(MAKE) -f src/CMakeFiles/MakeTable.dir/build.make src/CMakeFiles/MakeTable.dir/MakeTable.cpp.i
+.PHONY : MakeTable.cpp.i
+
+MakeTable.s: MakeTable.cpp.s
+
+.PHONY : MakeTable.s
+
+# target to generate assembly for a file
+MakeTable.cpp.s:
+	cd /home/yhl/CMAKE_Tutorial/build && $(MAKE) -f src/CMakeFiles/MakeTable.dir/build.make src/CMakeFiles/MakeTable.dir/MakeTable.cpp.s
+.PHONY : MakeTable.cpp.s
+
 hello.o: hello.cpp.o
 
 .PHONY : hello.o
@@ -246,14 +310,20 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... hello"
-	@echo "... mysqrt"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... edit_cache"
+	@echo "... hello"
 	@echo "... rebuild_cache"
+	@echo "... install/strip"
+	@echo "... mysqrt"
+	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... MakeTable"
+	@echo "... install/local"
+	@echo "... MakeTable.o"
+	@echo "... MakeTable.i"
+	@echo "... MakeTable.s"
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"

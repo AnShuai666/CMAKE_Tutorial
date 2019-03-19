@@ -1,4 +1,4 @@
-/home/yhl/CMAKE_Tutorial/install/lib/libhello.so
-/home/yhl/CMAKE_Tutorial/install/lib/libmysqrt.so
-/home/yhl/CMAKE_Tutorial/install/include/hello.h
-/home/yhl/CMAKE_Tutorial/install/include/mysqrt.h
+/home/yhl/CMAKE_Tutorial/build/_CPack_Packages/Linux/TZ/helloworld-1.0.1-Linux/lib/libhello.so
+/home/yhl/CMAKE_Tutorial/build/_CPack_Packages/Linux/TZ/helloworld-1.0.1-Linux/lib/libmysqrt.so
+/home/yhl/CMAKE_Tutorial/build/_CPack_Packages/Linux/TZ/helloworld-1.0.1-Linux/include/hello.h
+/home/yhl/CMAKE_Tutorial/build/_CPack_Packages/Linux/TZ/helloworld-1.0.1-Linux/include/mysqrt.h

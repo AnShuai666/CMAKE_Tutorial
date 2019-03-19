@@ -1,4 +1,5 @@
 /home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/home/yhl/CMAKE_Tutorial/install -G "CodeBlocks - Unix Makefiles" /home/yhl/CMAKE_Tutorial
+-- FALSE
 ON
 use the tutorial provided math library
 -- Configuring done

@@ -80,16 +80,38 @@ install/local/fast: preinstall/fast
 	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : edit_cache/fast
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -102,27 +124,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cpack --config ./CPackSourceConfig.cmake /home/yhl/CMAKE_Tutorial/build/CPackSourceConfig.cmake
+.PHONY : package_source
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target package_source
+package_source/fast: package_source
 
-.PHONY : list_install_components/fast
+.PHONY : package_source/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/yhl/software/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,6 +205,19 @@ mysqrt/fast:
 .PHONY : mysqrt/fast
 
 #=============================================================================
+# Target rules for targets named MakeTable
+
+# Build rule for target.
+MakeTable: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MakeTable
+.PHONY : MakeTable
+
+# fast build rule for target.
+MakeTable/fast:
+	$(MAKE) -f src/CMakeFiles/MakeTable.dir/build.make src/CMakeFiles/MakeTable.dir/build
+.PHONY : MakeTable/fast
+
+#=============================================================================
 # Target rules for targets named tutorial
 
 # Build rule for target.
@@ -216,12 +251,15 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... rebuild_cache"
+	@echo "... package_source"
+	@echo "... edit_cache"
 	@echo "... hello"
 	@echo "... mysqrt"
+	@echo "... MakeTable"
 	@echo "... tutorial"
 	@echo "... main"
 .PHONY : help
