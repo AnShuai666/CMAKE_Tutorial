@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yhl/CMAKE_Tutorial/src/mysqrt.cpp" "/home/yhl/CMAKE_Tutorial/build/src/CMakeFiles/mysqrt.dir/mysqrt.cpp.o"
+  "/home/as/CMAKE_Tutorial/src/mysqrt.cpp" "/home/as/CMAKE_Tutorial/build/src/CMakeFiles/mysqrt.dir/mysqrt.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

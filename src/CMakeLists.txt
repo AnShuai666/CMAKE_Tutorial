@@ -41,3 +41,6 @@ install(TARGETS mysqrt DESTINATION lib)
 
 install(FILES ../include/hello.h DESTINATION include)
 install(FILES ../include/mysqrt.h DESTINATION include)
+
+
+
