@@ -33,7 +33,6 @@ endforeach()
 
 
 
-
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmakemodule)
 include(checkFunctionExists)
